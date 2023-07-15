@@ -14,7 +14,7 @@ object DummyServer {
 
     suspend fun getProducts(): List<Product> = withContext(Dispatchers.Default) {
         val productList = mutableListOf<Product>()
-        for (i in 1..10) {
+        for (i in 1..100) {
             val product = Product(
                 id = "$i",
                 brand = "Brand$i",
