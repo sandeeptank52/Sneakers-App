@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/action_home">
+
+    <fragment
+        android:id="@+id/action_home"
+        android:name="com.sneakersapp.ui.home.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_action_home_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.sneakersapp.ui.product_detail.view.ProductDetailsFragment"
+        android:label="ProductDetailsFragment"
+        tools:layout="@layout/fragment_product_details">
+        <argument
+            android:name="productID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_action_cart"
+            app:destination="@id/action_cart" />
+    </fragment>
+    <fragment
+        android:id="@+id/action_cart"
+        android:name="com.sneakersapp.ui.cart.view.CartFragment"
+        android:label="CartFragment" />
+</navigation>
